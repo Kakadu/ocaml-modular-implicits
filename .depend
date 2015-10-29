@@ -31,7 +31,7 @@ parsing/asttypes.cmi : parsing/location.cmi
 parsing/docstrings.cmi : parsing/parsetree.cmi parsing/location.cmi
 parsing/lexer.cmi : parsing/parser.cmi parsing/location.cmi
 parsing/location.cmi : utils/warnings.cmi
-parsing/longident.cmi :
+parsing/longident.cmi : parsing/asttypes.cmi
 parsing/parse.cmi : parsing/parsetree.cmi
 parsing/parser.cmi : parsing/parsetree.cmi parsing/location.cmi \
     parsing/docstrings.cmi
@@ -67,7 +67,8 @@ parsing/location.cmo : utils/warnings.cmi utils/terminfo.cmi \
     parsing/location.cmi
 parsing/location.cmx : utils/warnings.cmx utils/terminfo.cmx \
     parsing/location.cmi
-parsing/longident.cmo : utils/misc.cmi parsing/longident.cmi
+parsing/longident.cmo : utils/misc.cmi parsing/asttypes.cmi \
+    parsing/longident.cmi
 parsing/longident.cmx : utils/misc.cmx parsing/longident.cmi
 parsing/parse.cmo : parsing/syntaxerr.cmi parsing/parser.cmi \
     parsing/location.cmi parsing/lexer.cmi parsing/docstrings.cmi \
@@ -145,12 +146,8 @@ typing/typecore.cmi : typing/types.cmi typing/typeimplicit.cmo \
     typing/env.cmi parsing/asttypes.cmi typing/annot.cmi
 typing/typedecl.cmi : typing/types.cmi typing/typedtree.cmi typing/path.cmi \
     parsing/parsetree.cmi parsing/longident.cmi parsing/location.cmi \
-<<<<<<< HEAD
     typing/includecore.cmi typing/ident.cmi typing/env.cmi \
     parsing/asttypes.cmi
-=======
-    typing/includecore.cmi typing/ident.cmi typing/env.cmi
->>>>>>> Updated .depend
 typing/typedtreeIter.cmi : typing/typedtree.cmi parsing/asttypes.cmi
 typing/typedtreeMap.cmi : typing/typedtree.cmi
 typing/typedtree.cmi : typing/types.cmi typing/primitive.cmi typing/path.cmi \
@@ -282,14 +279,6 @@ typing/predef.cmx : typing/types.cmx typing/path.cmx parsing/location.cmx \
     typing/ident.cmx typing/btype.cmx parsing/asttypes.cmi typing/predef.cmi
 typing/primitive.cmo : utils/misc.cmi typing/primitive.cmi
 typing/primitive.cmx : utils/misc.cmx typing/primitive.cmi
-<<<<<<< HEAD
-typing/printtyped.cmo : typing/typedtree.cmi parsing/printast.cmi \
-    typing/path.cmi utils/misc.cmi parsing/longident.cmi parsing/location.cmi \
-    typing/ident.cmi parsing/asttypes.cmi typing/printtyped.cmi
-typing/printtyped.cmx : typing/typedtree.cmx parsing/printast.cmx \
-    typing/path.cmx utils/misc.cmx parsing/longident.cmx parsing/location.cmx \
-    typing/ident.cmx parsing/asttypes.cmi typing/printtyped.cmi
-=======
 typing/printtyped.cmo : typing/types.cmi typing/typedtree.cmi \
     parsing/printast.cmi typing/path.cmi utils/misc.cmi parsing/longident.cmi \
     parsing/location.cmi typing/ident.cmi parsing/asttypes.cmi \
@@ -298,7 +287,6 @@ typing/printtyped.cmx : typing/types.cmx typing/typedtree.cmx \
     parsing/printast.cmx typing/path.cmx utils/misc.cmx parsing/longident.cmx \
     parsing/location.cmx typing/ident.cmx parsing/asttypes.cmi \
     typing/printtyped.cmi
->>>>>>> Updated .depend
 typing/printtyp.cmo : typing/types.cmi typing/primitive.cmi \
     typing/predef.cmi typing/path.cmi typing/outcometree.cmi \
     typing/oprint.cmi utils/misc.cmi parsing/longident.cmi \
@@ -391,8 +379,6 @@ typing/typedtree.cmx : typing/types.cmx typing/primitive.cmx typing/path.cmx \
     parsing/parsetree.cmi utils/misc.cmx parsing/longident.cmx \
     parsing/location.cmx typing/ident.cmx typing/env.cmx parsing/asttypes.cmi \
     typing/typedtree.cmi
-<<<<<<< HEAD
-=======
 typing/typeimplicit.cmo : typing/types.cmi typing/typedtree.cmi \
     typing/subst.cmi typing/path.cmi parsing/longident.cmi \
     parsing/location.cmi typing/ident.cmi typing/env.cmi typing/ctype.cmi \
@@ -401,7 +387,6 @@ typing/typeimplicit.cmx : typing/types.cmx typing/typedtree.cmx \
     typing/subst.cmx typing/path.cmx parsing/longident.cmx \
     parsing/location.cmx typing/ident.cmx typing/env.cmx typing/ctype.cmx \
     typing/btype.cmx
->>>>>>> Updated .depend
 typing/typemod.cmo : utils/warnings.cmi typing/typetexp.cmi typing/types.cmi \
     typing/typeimplicit.cmo typing/typedtree.cmi typing/typedecl.cmi \
     typing/typecore.cmi typing/typeclass.cmi typing/subst.cmi \
@@ -819,13 +804,10 @@ asmcomp/emit.cmo : asmcomp/reg.cmi asmcomp/proc.cmi utils/misc.cmi \
 asmcomp/emit.cmx : asmcomp/reg.cmx asmcomp/proc.cmx utils/misc.cmx \
     asmcomp/mach.cmx asmcomp/linearize.cmx bytecomp/lambda.cmx \
     asmcomp/emitaux.cmx asmcomp/debuginfo.cmx utils/config.cmx \
-<<<<<<< HEAD
+    asmcomp/compilenv.cmx asmcomp/cmm.cmx utils/clflags.cmx \
+    asmcomp/branch_relaxation.cmx asmcomp/arch.cmx asmcomp/emit.cmi \
     asmcomp/compilenv.cmx asmcomp/cmm.cmx utils/clflags.cmx \
     asmcomp/branch_relaxation.cmx asmcomp/arch.cmx asmcomp/emit.cmi
-=======
-    asmcomp/compilenv.cmx asmcomp/cmm.cmx utils/clflags.cmx asmcomp/arch.cmx \
-    asmcomp/emit.cmi
->>>>>>> Updated .depend
 asmcomp/interf.cmo : asmcomp/reg.cmi asmcomp/proc.cmi asmcomp/mach.cmi \
     asmcomp/interf.cmi
 asmcomp/interf.cmx : asmcomp/reg.cmx asmcomp/proc.cmx asmcomp/mach.cmx \
